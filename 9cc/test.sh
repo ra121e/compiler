@@ -3,10 +3,10 @@ assert() {
 	expected="$1"
 	input="$2"
 
-	./pcc "$input" > tmp.s
+	./9cc "$input" > tmp.s
 	cc -o tmp tmp.s
 	./tmp
-	acutual="S?"
+	actual="$?"
 
 	if [ "$actual" = "$expected" ]; then
 		echo "$input => $actual"
